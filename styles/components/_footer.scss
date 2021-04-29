@@ -1,0 +1,19 @@
+.footer {
+  background-color: $footer-bg;
+  color: $white;
+
+  ul {
+    padding: 0;
+    a {
+      color: rgb(204, 202, 202);
+    }
+  }
+
+  a {
+    color: rgb(204, 202, 202);
+  }
+
+  .footer-images {
+    width: 60px;
+  }
+}
