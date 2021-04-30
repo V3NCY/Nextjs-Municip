@@ -1,5 +1,5 @@
 import React from 'react'
-import { UncontrolledCarousel } from 'reactstrap'
+import { UncontrolledCarousel, Row, Col } from 'reactstrap'
 
 
 const items = [
@@ -23,11 +23,12 @@ const items = [
   },
 ];
 
-const Example = () => {
-  return <div className="carousel mt-5">
-    <UncontrolledCarousel items={items} />
-  </div>
-
-};
+const Example = () => (
+  <Row>
+    <Col md="8" className="mx-auto my-5">
+      <UncontrolledCarousel items={items} />
+    </Col>
+  </Row>
+);
 
 export default Example
