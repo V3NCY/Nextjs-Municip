@@ -5,7 +5,7 @@ const Rating = ({ rating }) => {
     return (
         <div style={{ width: 50, height: 50 }}>
             <CircularProgressbar 
-                className={"game-rating"}
+                className={"hotel-rating"}
                 strokeWidth={15}
                 value={rating * 10} 
                 text={rating}

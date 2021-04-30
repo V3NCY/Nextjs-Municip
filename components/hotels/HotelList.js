@@ -1,37 +1,38 @@
-import GameItem from "./GameItem";
+import HotelItem from "./HotelItem";
 
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getGames } from "../../redux/actions";
+import { getHotels } from "../../redux/actions";
 
-function GamesList(props) {
+function HotelsList(props) {
 
-    const games = useSelector(state => state.games);
+    const hotels = useSelector(state => state.hotels);
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getGames());
+        dispatch(getHotels());
     }, []);
-    const getGamesList = () => {
-        if(!games.length){
+    const getHotelsList = () => {
+        if (!hotels.length) {
             return null;
         }
-        const gamesList = games.map(game => {
-            return <GameItem
-                key={game._id}
-                title={game.title}
-                description={game.description}
-                rating={game.rating}
-                image={game.image}
-            ></GameItem>
+        const hotelsList = hotels.map(hotel => {
+            return <HotelItem
+                key={hotel._id}
+                title={hotel.title}
+                description={hotel.description}
+                extras={hotel.extras}
+                rating={hotel.rating}
+                image={hotel.image}
+            ></HotelItem>
         })
-        return gamesList;
+        return hotelsList;
     }
 
     return <>
         <div className="row">
-            { getGamesList() }
+            {getHotelsList()}
         </div>
     </>
 }
-export default GamesList;
+export default HotelsList;

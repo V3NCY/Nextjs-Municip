@@ -1,17 +1,13 @@
 import Head from 'next/head'
-import DefaultLayout from '../components/layouts/default'
-import WeatherChart from '../components/charts/WeatherChart'
+import HomeLayout from '../components/layouts/Home'
 
 export default function Home() {
   return (
-    <DefaultLayout>
+    <HomeLayout>
       <Head>
         <title>Начало</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="row">
-        <WeatherChart />
-      </div>
-    </DefaultLayout>
+    </HomeLayout>
   )
 }

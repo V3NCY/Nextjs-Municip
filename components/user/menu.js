@@ -7,14 +7,14 @@ import {
     Form,
     FormGroup,
     Label,
-} from 'reactstrap';
+} from 'reactstrap'
 
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
-import { login, logout } from '../../redux/actions';
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react'
+import { login, logout } from '../../redux/actions'
 import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"
 
 const UserMenu = (props) => {
 
@@ -51,12 +51,12 @@ const UserMenu = (props) => {
                 <div className="mx-2">{currentUser.email}</div>
                 <Button size="sm" onClick={() => {
                     onLogout();
-                }} color="primary">Logout</Button>
+                }} color="danger">Logout</Button>
             </div>
         }
         return <Button onClick={() => {
             setModal(true)
-        }} color="success" size="sm" color="primary">Login</Button>
+        }} color="success" size="md" color="primary" className='mr-2'>Login</Button>
     }
 
     return (
@@ -89,7 +89,7 @@ const UserMenu = (props) => {
                                 onChange={e => setPassword(e.target.value)}
                                 placeholder="Your password..." />
                         </FormGroup>
-                        <Button type="submit">Login</Button>
+                        <Button type="submit" color="primary">Login</Button>
                     </Form>
                 </ModalBody>
             </Modal>
@@ -97,4 +97,4 @@ const UserMenu = (props) => {
     );
 }
 
-export default UserMenu;
+export default UserMenu

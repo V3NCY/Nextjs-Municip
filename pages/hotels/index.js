@@ -1,11 +1,18 @@
 import React from "react"
-import { connect } from "react-redux"
-import { setHotels } from "../hotels/redux/actions"
+import Head from 'next/head'
+import DefaultLayout from "../../components/layouts/default"
 
-function Hotels({ dispatch }) {
-  dispatch(setHotels());
+function Hotels() {
 
-  return <div className="hotels"></div>;
+  return (
+    <DefaultLayout>
+      <Head>
+        <title>Хотели</title>
+      </Head>
+      <h1>Хотели</h1>
+    </DefaultLayout>
+  )
 }
 
-export default connect()(Hotels)
+export default Hotels
+

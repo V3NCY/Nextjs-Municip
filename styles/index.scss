@@ -4,7 +4,7 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-// Custom components
+// Custom components 1
 @import './components/rating';
 
 
@@ -18,13 +18,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap/dist/css/bootstrap.css";
 
-
+//Custom components 2
 @import "./components/footer";
-@import "../pages/hotels/Hotel/scss/bar.scss";
-@import "../pages/hotels/Hotel/scss/booking.scss";
-@import "../pages/hotels/Hotel/scss/card.scss";
-@import "../pages/hotels/Hotel/scss/cardMedia.scss";
-@import "../pages/hotels/Hotel/scss/slider.scss";
-
 
 // @import "~font-awesome/scss/font-awesome";

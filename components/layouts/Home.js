@@ -1,13 +1,13 @@
-import Navbar from "../navbar/Navbar"
+import Navbar from "../navbar/navbar"
 import Footer from "../footer/footer"
 import Carousel from "../carousel/carousel"
 
-function HomeLayout (props) {
-    return <>
-    <Navbar/>
-    <Carousel/>
+function HomeLayout(props) {
+  return <>
+    <Navbar />
     {props.children}
-    <Footer/>
+    <Carousel />
+    <Footer />
   </>
 }
 
