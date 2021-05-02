@@ -21,19 +21,19 @@ const Navigation = () => {
     const currentUser = useSelector(state => state.currentUser);
 
     const getAdminNavItem = () => {
-      if (!currentUser.roles || !currentUser.roles.includes("ADMIN")) {
-        return null;
-      }
-      return <NavItem>
-        <Link href='/admin'>
-          <a className="nav-link">Админ</a>
-        </Link>
-      </NavItem>
+        if (!currentUser.roles || !currentUser.roles.includes("ADMIN")) {
+            return null;
+        }
+        return <NavItem>
+            <Link href='/admin'>
+                <a className="nav-link">Админ</a>
+            </Link>
+        </NavItem>
     }
 
 
     return (
-        <Navbar color="dark" dark expand="md" className="shadow p-1 bg-light">
+        <Navbar color="dark" dark expand="md" className="shadow p-2 bg-light">
             <NavbarBrand href="/" className="ml-2">
                 <Logo width="50" height="50" />
             </NavbarBrand>
