@@ -1,8 +1,7 @@
-import HotelItem from "./HotelItem";
-
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getHotels } from "../../redux/actions";
+import HotelItem from "./HotelItem"
+import { useSelector, useDispatch } from "react-redux"
+import { useEffect } from "react"
+import { getHotels } from "../../redux/actions"
 
 function HotelsList(props) {
 
@@ -24,7 +23,9 @@ function HotelsList(props) {
                 extras={hotel.extras}
                 rating={hotel.rating}
                 image={hotel.image}
-            ></HotelItem>
+            >
+
+            </HotelItem>
         })
         return hotelsList;
     }
@@ -35,4 +36,4 @@ function HotelsList(props) {
         </div>
     </>
 }
-export default HotelsList;
+export default HotelsList

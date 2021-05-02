@@ -8,8 +8,8 @@ class WrappedApp extends App {
 
     const response = await ctx.store.dispatch(getCurrentUser(ctx));
     let currentUser = {};
-    if (response?.input?.currentUser) {
-      currentUser = response.input.currentUser;
+    if (response?.data?.currentUser) {
+      currentUser = response.data.currentUser;
     }
 
     return {

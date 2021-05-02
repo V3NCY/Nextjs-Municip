@@ -19,8 +19,8 @@ export const getHotels = params => async dispatch => {
         const response = await getClient().query({
             query: GET_HOTELS,
         });
-        if(response?.input?.hotels){
-            dispatch(setHotels(response.input.hotels));
+        if(response?.data?.hotels){
+            dispatch(setHotels(response.data.hotels));
         }
     } catch (error) {
         console.log(error)
@@ -31,8 +31,8 @@ export const getCurrentUser = (ctx) => async dispatch => {
         const response = await getClient(ctx).query({
             query: GET_CURRENT_USER,
         });
-        if(response?.input?.currentUser){
-            dispatch(setCurrenUser(response.input.currentUser));
+        if(response?.data?.currentUser){
+            dispatch(setCurrenUser(response.data.currentUser));
         }
         return response;
     } catch (error) {
@@ -52,8 +52,8 @@ export const login = variables => async dispatch => {
             mutation: LOGIN,
             variables,
         });
-        if(response?.input?.login){
-            const token = response.input.login;
+        if(response?.data?.login){
+            const token = response.data.login;
             cookieCutter.set(
                 "token", 
                 token, 
@@ -72,7 +72,7 @@ export const logout = () => async dispatch => {
         const response = await getClient().mutate({
             mutation: LOGOUT,
         });
-        if(response?.input?.logout){
+        if(response?.data?.logout){
             cookieCutter.set('token', '', { expires: new Date(0) })
             dispatch(setCurrenUser({}));
         }

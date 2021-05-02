@@ -21,14 +21,14 @@ const Navigation = () => {
     const currentUser = useSelector(state => state.currentUser);
 
     const getAdminNavItem = () => {
-        if (!currentUser.roles || !currentUser.roles.includes("ADMIN")) {
-            return null;
-        }
-        return <NavItem>
-            <Link href='/admin'>
-                <a className="nav-link">Админ</a>
-            </Link>
-        </NavItem>
+      if (!currentUser.roles || !currentUser.roles.includes("ADMIN")) {
+        return null;
+      }
+      return <NavItem>
+        <Link href='/admin'>
+          <a className="nav-link">Админ</a>
+        </Link>
+      </NavItem>
     }
 
 

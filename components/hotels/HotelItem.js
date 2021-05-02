@@ -4,10 +4,9 @@ import {
     CardText,
     CardBody,
     CardTitle,
-} from 'reactstrap';
-import Rating from "./rating";
-
-import constants from '../../constants';
+} from 'reactstrap'
+import Rating from "./rating"
+import constants from '../../constants'
 
 const HotelItem = props => {
 
@@ -39,4 +38,4 @@ const HotelItem = props => {
     );
   };
   
-export default HotelItem;
+export default HotelItem

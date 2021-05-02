@@ -49,7 +49,7 @@ const UserMenu = (props) => {
             return <div className="d-flex align-items-center">
                 <FontAwesomeIcon icon={faUser} />
                 <div className="mx-2">{currentUser.email}</div>
-                <Button size="sm" onClick={() => {
+                <Button size="md mr-2" onClick={() => {
                     onLogout();
                 }} color="danger">Logout</Button>
             </div>

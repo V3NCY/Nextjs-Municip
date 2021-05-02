@@ -11,7 +11,7 @@ const defaultCenter = { lat: 42.64014889778318, lng: 24.35811891735378 };
 const defaultOptions = { scrollwheel: false };
 
 const RegularMap = withScriptjs(
-    withGoogleMap(props => (
+    withGoogleMap(Component => (
         <GoogleMap
             defaultZoom={11}
             defaultCenter={defaultCenter}
@@ -24,7 +24,7 @@ const RegularMap = withScriptjs(
 
 const loadingElementStyle = { height: '100%' };
 const containerElementStyle = { height: '280px' };
-const mapElementStyle = { height: '100%' };
+const mapElementStyle = { height: '117%' };
 
 export default function GoogleMaps() {
     return (

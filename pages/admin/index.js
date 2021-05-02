@@ -1,5 +1,5 @@
+import DefaultLayout from '../../components/layouts/default'
 import Head from 'next/head'
-import DefaultLayout from '../../components/layouts/Default'
 import { wrapper } from "../../redux/wrapper";
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
