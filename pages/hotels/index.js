@@ -1,8 +1,11 @@
 import React from "react"
 import Head from 'next/head'
 import DefaultLayout from "../../components/layouts/default"
+import { connect } from "react-redux"
+import { setHotels } from "../../pages/hotels/redux/actions"
 
-function Hotels() {
+function Hotels({dispatch}) {
+  dispatch(setHotels());
 
   return (
     <DefaultLayout>
@@ -14,5 +17,5 @@ function Hotels() {
   )
 }
 
-export default Hotels
+export default connect()(Hotels)
 

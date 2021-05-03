@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import {
     withScriptjs,
     withGoogleMap,
     GoogleMap,
     Marker
-} from "react-google-maps";
+} from "react-google-maps"
 
 const defaultCenter = { lat: 42.64014889778318, lng: 24.35811891735378 };
 

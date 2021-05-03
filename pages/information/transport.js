@@ -42,7 +42,7 @@ const Transp = (props) => {
                         </ModalBody>
                         <ModalFooter>
                             <Button color="primary" onClick={toggle}>
-                                Cancel
+                                Затвори
               </Button>
                         </ModalFooter>
                     </Modal>

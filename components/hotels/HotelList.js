@@ -5,6 +5,7 @@ import { getHotels } from "../../redux/actions"
 
 function HotelsList(props) {
 
+    
     const hotels = useSelector(state => state.hotels);
 
     const dispatch = useDispatch();

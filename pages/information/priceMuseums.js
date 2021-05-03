@@ -41,7 +41,7 @@ const PriceA = (props) => {
             </ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={toggle}>
-                Cancel
+                Затвори
               </Button>
             </ModalFooter>
           </Modal>

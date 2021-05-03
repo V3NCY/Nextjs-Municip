@@ -3,7 +3,6 @@ import Transp from "../information/transport"
 function Transport(props) {
     return (
         <>
-            <h1>Транспорт</h1>
             <div className="container">
                 <div className="row">
                     <Transp />

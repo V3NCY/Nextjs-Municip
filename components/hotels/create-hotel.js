@@ -1,7 +1,6 @@
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
-import { gql, useMutation } from '@apollo/client'
-import { useState } from "react"
-
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { gql, useMutation } from '@apollo/client';
+import { useState } from "react";
 const CREATE_HOTEL = gql`
   mutation CreateHotel($data: CreateHotelInput!) {
     createHotel(data: $data) {
@@ -10,7 +9,6 @@ const CREATE_HOTEL = gql`
       description
       extras
       rating
-      
     }
   }
 `;
@@ -31,7 +29,6 @@ function CreateHotel(props) {
                     description,
                     extras,
                     rating: Number(rating),
-
                 }
             }
         }
@@ -106,4 +103,4 @@ function CreateHotel(props) {
         </Form>
     </>
 }
-export default CreateHotel
+export default CreateHotel;

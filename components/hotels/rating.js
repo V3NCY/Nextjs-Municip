@@ -1,5 +1,5 @@
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import { CircularProgressbar } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
 
 const Rating = ({ rating }) => {
     return (
@@ -14,4 +14,4 @@ const Rating = ({ rating }) => {
     );
 };
 
-export default Rating;
+export default Rating
