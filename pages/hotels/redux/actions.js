@@ -1,8 +1,8 @@
-import hotelsService from '../services/hotels';
+import hotelsService from '../services/hotels'
 
-export const SET_HOTELS = 'SET_HOTELS';
-export const VIEW_HOTEL = 'VIEW_HOTEL';
-export const SEARCH = 'SEARCH';
+export const SET_HOTELS = 'SET_HOTELS'
+export const VIEW_HOTEL = 'VIEW_HOTEL'
+export const SEARCH = 'SEARCH'
 
 export const setHotels = () => {
   const hotels = hotelsService.getHotels();

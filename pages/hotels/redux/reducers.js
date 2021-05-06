@@ -33,4 +33,4 @@ function booking(state = initialState, action = {}) {
   }
 }
 
-export default booking;
+export default booking

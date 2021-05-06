@@ -81,3 +81,23 @@ export const logout = () => async dispatch => {
         console.log(error)
     }
 }
+    export const register = variables => async dispatch => {
+        try {
+            const response = await getClient().mutate({
+                mutation: REGISTER,
+                variables,
+            });
+            if(response?.data?.register){
+                const token = response.data.register;
+                cookieCutter.set(
+                    "token", 
+                    token, 
+                    { expires: new moment().add(1, "d")._d 
+                })
+                dispatch(getCurrentUser());
+            }
+            return response;
+        } catch (error) {
+            console.log(error)
+        }
+}

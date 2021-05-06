@@ -14,6 +14,8 @@ import Logo from '../../mountain.svg'
 import Link from 'next/link'
 import UserMenu from "../user/menu"
 import { useSelector } from "react-redux"
+import RegisterUser from '../user/register'
+
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -88,9 +90,11 @@ const Navigation = () => {
                     {getAdminNavItem()}
                 </Nav>
                 <UserMenu />
+                <RegisterUser />
+
                 <Form inline>
                     <FormControl type="text" placeholder="Търси..." className="mr-sm-2" />
-                    <Button variant="primary" className="mr-2" color="primary">Търси</Button>
+                    <Button className="mr-2" color="primary">Търси</Button>
                 </Form>
             </Collapse>
         </Navbar>

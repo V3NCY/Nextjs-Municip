@@ -51,12 +51,12 @@ const UserMenu = (props) => {
                 <div className="mx-2">{currentUser.email}</div>
                 <Button size="md mr-2" onClick={() => {
                     onLogout();
-                }} color="danger">Logout</Button>
+                }} color="danger">Отписване</Button>
             </div>
         }
         return <Button onClick={() => {
             setModal(true)
-        }} color="success" size="md" color="primary" className='mr-2'>Login</Button>
+        }} size="md" color="primary" className='mr-2'>Вписване</Button>
     }
 
     return (
@@ -70,26 +70,26 @@ const UserMenu = (props) => {
                         onLogin()
                     }}>
                         <FormGroup>
-                            <Label for="email">Email:</Label>
+                            <Label for="email">И-мейл:</Label>
                             <Input
                                 type="email"
                                 name="email"
                                 id="email"
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
-                                placeholder="Your e-mail..." />
+                                placeholder="Вашият и-мейл адрес..." />
                         </FormGroup>
                         <FormGroup>
-                            <Label for="password">Password:</Label>
+                            <Label for="password">Парола:</Label>
                             <Input
                                 type="password"
                                 name="password"
                                 id="password"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
-                                placeholder="Your password..." />
+                                placeholder="Вашата парола..." />
                         </FormGroup>
-                        <Button type="submit" color="primary">Login</Button>
+                        <Button type="submit" color="primary">Вписване</Button>
                     </Form>
                 </ModalBody>
             </Modal>

@@ -3,6 +3,7 @@ import App from "next/app"
 import { wrapper } from "../redux/wrapper"
 import { getCurrentUser } from '../redux/actions'
 
+
 class WrappedApp extends App {
   static getInitialProps = async ({ Component, ctx }) => {
 
@@ -13,6 +14,7 @@ class WrappedApp extends App {
     }
 
     return {
+      
       pageProps: {
         ...(Component.getInitialProps
           ? await Component.getInitialProps(ctx)
@@ -28,9 +30,9 @@ class WrappedApp extends App {
 
   };
   render() {
+
     const { Component, pageProps } = this.props;
     return <Component {...pageProps} />;
-
   }
 }
 
