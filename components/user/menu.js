@@ -60,7 +60,7 @@ const UserMenu = (props) => {
     }
 
     return (
-        <>
+        <>  
             { getUserMenu()}
             <Modal isOpen={modal} toggle={toggleModal}>
                 <ModalHeader toggle={toggleModal}>Вписване</ModalHeader>

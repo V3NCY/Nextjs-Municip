@@ -87,15 +87,16 @@ const Navigation = () => {
                             <a className="nav-link">Добави хотел</a>
                         </Link>
                     </NavItem>
+
                     {getAdminNavItem()}
                 </Nav>
                 <UserMenu />
                 <RegisterUser />
 
-                <Form inline>
+                {/* <Form inline>
                     <FormControl type="text" placeholder="Търси..." className="mr-sm-2" />
                     <Button className="mr-2" color="primary">Търси</Button>
-                </Form>
+                </Form> */}
             </Collapse>
         </Navbar>
     );

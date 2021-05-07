@@ -11,7 +11,9 @@ import {
 
 import React, { useState } from 'react'
 import { register } from '../../redux/actions'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { useRouter } from 'next/router'
+
 
 const RegisterUser = (props) => {
 
@@ -21,7 +23,9 @@ const RegisterUser = (props) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
+    const currentUser = useSelector(state => state.currentUser);
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const onRegister = async () => {
         const variables = {
@@ -36,12 +40,13 @@ const RegisterUser = (props) => {
             setModal(false);
         }
     }
-    const getRegisterUser = () => {
-
+    const getRegisterUser = () => {         
+        
         return <Button onClick={() => {
             setModal(true)
-        }} color="success" size="md" color="primary" className='mr-2'>Регистрация</Button>
+        }} size="md" color="primary" className='mr-2'>Регистрация</Button>
     }
+    
 
 
     const [modal, setModal] = useState(false);
