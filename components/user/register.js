@@ -35,18 +35,21 @@ const RegisterUser = (props) => {
             password,
             confirmPassword,
         }
-        const response = await dispatch(register(variables))
+        const userData = {
+            input: variables
+        }
+        const response = await dispatch(register(userData))
         if (response) {
             setModal(false);
         }
     }
-    const getRegisterUser = () => {         
-        
+    const getRegisterUser = () => {
+
         return <Button onClick={() => {
             setModal(true)
         }} size="md" color="primary" className='mr-2'>Регистрация</Button>
     }
-    
+
 
 
     const [modal, setModal] = useState(false);
@@ -113,6 +116,7 @@ const RegisterUser = (props) => {
                                 onChange={e => setConfirmPassword(e.target.value)}
                                 placeholder="Потвърдете вашата парола..." />
                         </FormGroup>
+
                         <Button type="submit" color="primary">Регистрация</Button>
                     </Form>
                 </ModalBody>

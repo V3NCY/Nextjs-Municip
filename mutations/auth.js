@@ -15,21 +15,7 @@ mutation Logout {
 }
 `;
 export const REGISTER = gql`
-  mutation Register(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
-    $confirmPassword: String!
-  ) {
-    register(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
-      confirmPassword: $confirmPassword
-    ) {
-      token
-    }
+  mutation Register($input: UserInput!) {
+    registerUser(input: $input)
   }
 `;
