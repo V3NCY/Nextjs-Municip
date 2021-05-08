@@ -8,13 +8,17 @@ import Cookies from "cookies";
 import moment from "moment";
 
 
+//TODO add function for creating a hotel
+// copy from register
+
+
 export function setHotels(hotels) {
     return { type: actions.SET_HOTELS, payload: hotels };
 }
 export function setCurrenUser(user) {
     return { type: actions.SET_CURRENT_USER, payload: user };
 }
-export const getHotels = params => async dispatch => {
+export const getHotels = () => async dispatch => {
     try {
         const response = await getClient().query({
             query: GET_HOTELS,

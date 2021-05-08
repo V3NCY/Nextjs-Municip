@@ -1,5 +1,11 @@
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+
+//TODO refactor and copy the logic from registration 
+// need to dispatch action createHotel
+
 import { gql, useMutation } from '@apollo/client'
+
+
 import { useState } from "react"
 
 const CREATE_HOTEL = gql`
@@ -13,6 +19,9 @@ const CREATE_HOTEL = gql`
     }
   }
 `;
+
+
+
 function CreateHotel(props) {
 
     const [title, setTitle] = useState('');
