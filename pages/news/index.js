@@ -21,7 +21,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert"
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        maxWidth: 345,
+        maxWidth: "100%",
         marginBottom: 15,
     },
     media: {
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         transform: "rotate(180deg)",
     },
     avatar: {
-        width: 60,
         backgroundColor: purple[400],
     },
     root: {
@@ -74,7 +73,7 @@ export default function News() {
                 <div className="row align-items-center">
                     <div className="col-sm-4">
                         {/* Card 1 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>
@@ -128,7 +127,7 @@ export default function News() {
                     </div>
                     <div className="col-sm-4">
                         {/* Card 2 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>
@@ -183,7 +182,7 @@ export default function News() {
 
                     <div className="col-sm-4">
                         {/* Card 3 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>

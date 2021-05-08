@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import DefaultLayout from '../../components/layouts/default'
-// import CreateHotel from "../../components/hotels/create-hotel"
+import CreateHotel from "../../components/hotels/create-hotel"
+import HotelItem from "../../components/hotels/HotelItem"
 import { useSelector, useDispatch } from "react-redux"
-import { getHotels } from "../../redux/actions";
-import { useEffect } from "react";
-
+import { getHotels } from "../../redux/actions"
+import { useEffect } from "react"
 
 //TODO Improve the hotel listing
 // create hotel component and import here 
@@ -22,14 +22,20 @@ export default function AddHotel(props) {
             return null;
         }
         const hotelsList = hotels.map(hotel => {
-            //TODO render hotel component instead of just div and pass data as props to it
-            return <div
+            //TODO render hotel component instead of just div and pass data as props to it           
+            return <HotelItem
                 key={hotel._id}
-            >{hotel.title}</div>
+                title={hotel.title}
+                description={hotel.description}
+                extras={hotel.extras}
+                rating={hotel.rating}
+                image={hotel.image}
+            ></HotelItem>
         })
         return hotelsList;
 
     }
+
     return (
         <DefaultLayout>
             <Head>
@@ -39,14 +45,17 @@ export default function AddHotel(props) {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
-                        {/* <CreateHotel /> */}
+                        <CreateHotel />
                     </div>
+
                     <div className="col">
                         <div>Списък с хотели:</div>
                         {getHotelsList()}
+
                     </div>
                 </div>
             </div>
+
 
         </DefaultLayout>
     )

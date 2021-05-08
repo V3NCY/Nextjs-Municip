@@ -21,7 +21,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert"
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        maxWidth: 345,
+        maxWidth: "100%",
         marginBottom: 15,
     },
     media: {
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         transform: "rotate(180deg)",
     },
     avatar: {
-        width: 60,
         backgroundColor: pink[400],
     },
     root: {
@@ -77,7 +76,7 @@ export default function Culture() {
                 <div className="row align-items-center">
                     <div className="col-sm-4">
                         {/* Card 1 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>
@@ -135,7 +134,7 @@ export default function Culture() {
                     </div>
                     {/* Card 2 */}
                     <div className="col-sm-4">
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>
@@ -192,7 +191,7 @@ export default function Culture() {
                     </div>
                     {/* Card 3 */}
                     <div className="col-sm-4">
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>
@@ -250,7 +249,7 @@ export default function Culture() {
                     </div>
                     {/* Card 4 */}
                     <div className="col-sm-4">
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="art" className={classes.avatar}>
@@ -307,7 +306,7 @@ export default function Culture() {
                     </div>
                     {/* Card 5 */}
                     <div className="col-sm-4">
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="art" className={classes.avatar}>
@@ -365,7 +364,7 @@ export default function Culture() {
 
                     {/* Card 6 */}
                     <div className="col-sm-4">
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="event" className={classes.avatar}>

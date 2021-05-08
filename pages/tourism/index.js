@@ -21,7 +21,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert"
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        maxWidth: 345,
+        maxWidth: "100%",
         marginBottom: 15,
     },
     media: {
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         transform: "rotate(180deg)",
     },
     avatar: {
-        width: 60,
         backgroundColor: green[400],
     },
     root: {
@@ -69,14 +68,14 @@ export default function Tourism() {
             <Head>
                 <title>Туризъм</title>
             </Head>
-           
+
             <div className="container">
                 <h1>Туризъм</h1>
                 <h3 className="ml-2">Маршрути</h3>
                 <div className="row align-items-center">
                     <div className="col-sm-4">
                         {/* Card 1 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="tour" className={classes.avatar}>
@@ -147,7 +146,7 @@ export default function Tourism() {
                     </div>
                     <div className="col-sm-4">
                         {/* Card 2  */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="tour" className={classes.avatar}>
@@ -219,7 +218,7 @@ export default function Tourism() {
                     </div>
                     <div className="col-sm-4">
                         {/* Card 3 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="tour" className={classes.avatar}>
@@ -286,7 +285,7 @@ export default function Tourism() {
                     </div>
                     <div className="col-sm-4">
                         {/* Card 4 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="tour" className={classes.avatar}>
@@ -354,7 +353,7 @@ export default function Tourism() {
                     </div>
                     <div className="col-sm-4">
                         {/* Card 5 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="tour" className={classes.avatar}>
@@ -419,7 +418,7 @@ export default function Tourism() {
                     </div>
                     <div className="col-sm-4">
                         {/* Card 6 */}
-                        <Card raised className={classes.root} className="my-3">
+                        <Card className={classes.root} className="my-3">
                             <CardHeader
                                 avatar={
                                     <Avatar aria-label="tour" className={classes.avatar}>

@@ -11,6 +11,8 @@ import moment from "moment";
 //TODO add function for creating a hotel
 // copy from register
 
+// -------------DONE-------------
+
 
 export function setHotels(hotels) {
     return { type: actions.SET_HOTELS, payload: hotels };
@@ -49,6 +51,17 @@ export const getCurrentUser = (ctx) => async dispatch => {
         console.log(error)
     }
 }
+// ?
+function CreateHotel(dispatch, token) {
+    cookieCutter.set(
+        "token",
+        token,
+        {
+            expires: new moment().add(1, "d")._d
+        })
+    dispatch(getCreateHotel());
+}
+// ?
 
 function logUser(dispatch, token) {
     cookieCutter.set(
@@ -105,3 +118,21 @@ export const register = variables => async dispatch => {
         console.log(error)
     }
 }
+// ?
+export const createHotel = variables => async dispatch => {
+    try {
+        const response = await getClient().mutate({
+            mutation: CREATE_HOTEL,
+            variables,
+        });
+        if (response?.data?.createHotel) {
+            const token = response.data.createHotel;
+            CreateHotel(dispatch, token);
+        }
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+}
+// ?
+
