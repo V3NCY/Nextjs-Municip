@@ -19,3 +19,8 @@ export const REGISTER = gql`
     registerUser(input: $input)
   }
 `;
+export const CREATE_HOTEL = gql`
+  mutation CreateHotel($input: CreateHotelInput!) {
+    createHotel(input: $input)
+  }
+`;

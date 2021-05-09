@@ -7,7 +7,7 @@ const Rating = ({ rating }) => {
             <CircularProgressbar
                 className={"hotel-rating"}
                 strokeWidth={15}
-                value={rating * 10}
+                value={rating * 16}
                 text={rating}
             />
         </div>

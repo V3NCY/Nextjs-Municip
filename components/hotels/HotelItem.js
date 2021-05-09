@@ -8,6 +8,7 @@ import {
 import Rating from "./rating"
 import constants from '../../constants'
 
+
 const HotelItem = props => {
 
     const getHotelImage = () => {
@@ -30,8 +31,9 @@ const HotelItem = props => {
                         <Rating rating={props.rating} />
                         <CardTitle tag="h5" className="ml-3 text-truncate mb-0">{props.title}</CardTitle>
                     </div>
-                    <CardText className="hotel-extras">{props.extras}</CardText>
-                    <CardText className="hotel-description">{props.description}</CardText>
+                    <CardText className="hotel-extras ml-3 text-truncate mb-0">{props.extras}</CardText>
+                    <CardText className="hotel-description ml-3 text-truncate mb-0">{props.description}</CardText>
+
                 </CardBody>
             </Card>
         </div>

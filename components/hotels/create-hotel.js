@@ -2,32 +2,18 @@
 // need to dispatch action createHotel     
 //--------------DONE------------
 
-import { gql, useMutation } from '@apollo/client'
-import { useDispatch } from "react-redux"
-import { useState } from "react"
-import { createHotel } from '../../redux/actions'
 import {
     Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
     Input,
     Form,
     FormGroup,
     Label,
+    FormText,
 } from 'reactstrap'
 
-const CREATE_HOTEL = gql`
-  mutation CreateHotel($data: CreateHotelInput!) {
-    createHotel(data: $data) {
-      _id
-      title
-      description
-      extras
-      rating
-    }
-  }
-`;
+import React, { useState } from 'react'
+import { createHotel } from '../../redux/actions'
+import { useDispatch } from "react-redux"
 
 const CreateHotel = (props) => {
 
@@ -35,6 +21,7 @@ const CreateHotel = (props) => {
     const [description, setDescription] = useState('');
     const [extras, setExtras] = useState('');
     const [rating, setRating] = useState('');
+    const [image, setImage] = useState('');
 
     const dispatch = useDispatch();
 
@@ -44,15 +31,21 @@ const CreateHotel = (props) => {
             description,
             extras,
             rating,
+            image,
         }
-        const userData = {
+        const hotelData = {
             input: variables
         }
-        const response = await dispatch(createHotel(userData))
+        const response = await dispatch(createHotel(hotelData))
         if (response) {
             setModal(false);
         }
+    }
+    const getCreateHotel = () => {
 
+        return <Button onClick={() => {
+            setModal(true)
+        }} size="md" color="primary" className='mr-2'>Добави хотел</Button>
     }
 
     const getOptions = () => {
@@ -67,14 +60,12 @@ const CreateHotel = (props) => {
 
     const toggleModal = () => setModal(!modal);
 
-
     return (
         <>
             <Form onSubmit={e => {
                 e.preventDefault();
                 onCreateHotel()
             }}>
-
                 <FormGroup>
                     <Label for="title">Заглавие:</Label>
                     <Input
@@ -98,15 +89,15 @@ const CreateHotel = (props) => {
                 <FormGroup>
                     <Label for="extras">Екстри:</Label>
                     <Input
-                        type="extras"
+                        type="text"
                         name="extras"
                         id="extras"
                         value={extras}
                         onChange={e => setExtras(e.target.value)}
-                        placeholder="Екстри, с които разполага хотела..." />
+                        placeholder="С какви екстри разполага хотела..." />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="rating">Рейтинг</Label>
+                    <Label for="rating">Рейтинг:</Label>
                     <Input
                         type="select"
                         name="rating"
@@ -117,9 +108,16 @@ const CreateHotel = (props) => {
                         {getOptions()}
                     </Input>
                 </FormGroup>
-                <Button type="submit" color="primary">Добави хотел</Button>
+                <FormGroup>
+                    <Label for="exampleFile">Файл:</Label>
+                    <Input type="file" name="file" id="exampleFile" value={image}
+                        onChange={e => setImage(e.target.value)} />
+                    <FormText color="muted">
+                        Качете основна снимка на хотела...
+                    </FormText>
+                </FormGroup>
+                {getCreateHotel()}
             </Form>
-
         </>
     );
 }

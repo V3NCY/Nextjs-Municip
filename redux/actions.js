@@ -2,7 +2,7 @@ import actions from './action-types';
 import { GET_HOTELS } from "../queries/hotels";
 import { GET_CURRENT_USER } from "../queries/user";
 import { getClient } from "../apollo-client";
-import { LOGIN, LOGOUT, REGISTER } from '../mutations/auth';
+import { LOGIN, LOGOUT, REGISTER, CREATE_HOTEL } from '../mutations/auth';
 import cookieCutter from "cookie-cutter";
 import Cookies from "cookies";
 import moment from "moment";
@@ -125,8 +125,8 @@ export const createHotel = variables => async dispatch => {
             mutation: CREATE_HOTEL,
             variables,
         });
-        if (response?.data?.createHotel) {
-            const token = response.data.createHotel;
+        if (response?.input?.createHotel) {
+            const token = response.input.createHotel;
             CreateHotel(dispatch, token);
         }
         return response;

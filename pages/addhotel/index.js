@@ -6,8 +6,8 @@ import { useSelector, useDispatch } from "react-redux"
 import { getHotels } from "../../redux/actions"
 import { useEffect } from "react"
 
-//TODO Improve the hotel listing
-// create hotel component and import here 
+//TODO Improve the hotel listing !
+// create hotel component and import here !
 export default function AddHotel(props) {
 
     const hotels = useSelector(state => state.hotels);
@@ -22,7 +22,7 @@ export default function AddHotel(props) {
             return null;
         }
         const hotelsList = hotels.map(hotel => {
-            //TODO render hotel component instead of just div and pass data as props to it           
+            //TODO render hotel component instead of just div and pass data as props to it          ?  
             return <HotelItem
                 key={hotel._id}
                 title={hotel.title}
@@ -49,7 +49,7 @@ export default function AddHotel(props) {
                     </div>
 
                     <div className="col">
-                        <div>Списък с хотели:</div>
+                        <div className="mb-2">Списък с хотели:</div>
                         {getHotelsList()}
 
                     </div>
