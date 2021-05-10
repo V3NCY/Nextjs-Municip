@@ -12,10 +12,10 @@ import {
 } from 'reactstrap'
 
 import React, { useState } from 'react'
-import { createHotel } from '../../redux/actions'
+import { CreateHotel } from '../../redux/actions'
 import { useDispatch } from "react-redux"
 
-const CreateHotel = (props) => {
+const CreateNewHotel = (props) => {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -34,18 +34,18 @@ const CreateHotel = (props) => {
             image,
         }
         const hotelData = {
-            input: variables
+            data: variables
         }
-        const response = await dispatch(createHotel(hotelData))
+        const response = await dispatch(CreateHotel(hotelData))
         if (response) {
-            setModal(false);
+            onCreateHotel();
         }
     }
     const getCreateHotel = () => {
 
         return <Button onClick={() => {
-            setModal(true)
-        }} size="md" color="primary" className='mr-2'>Добави хотел</Button>
+            onCreateHotel();
+        }} size="md" color="primary" type="button" className='mr-2'>Добави хотел</Button>
     }
 
     const getOptions = () => {
@@ -56,16 +56,13 @@ const CreateHotel = (props) => {
         return options;
     }
 
-    const [modal, setModal] = useState(false);
-
-    const toggleModal = () => setModal(!modal);
 
     return (
         <>
             <Form onSubmit={e => {
                 e.preventDefault();
-                onCreateHotel()
-            }}>
+                onCreateHotel();
+            }} className="my-">
                 <FormGroup>
                     <Label for="title">Заглавие:</Label>
                     <Input
@@ -116,9 +113,9 @@ const CreateHotel = (props) => {
                         Качете основна снимка на хотела...
                     </FormText>
                 </FormGroup>
-                {getCreateHotel()}
             </Form>
+            {getCreateHotel()}
         </>
     );
 }
-export default CreateHotel
+export default CreateNewHotel

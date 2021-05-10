@@ -21,6 +21,13 @@ export const REGISTER = gql`
 `;
 export const CREATE_HOTEL = gql`
   mutation CreateHotel($input: CreateHotelInput!) {
-    createHotel(input: $input)
+    createHotel(input: $input) {
+      _id
+      title
+      description
+      extras
+      rating
+      image
+    }
   }
 `;

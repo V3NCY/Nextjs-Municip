@@ -1,11 +1,11 @@
-import actions from './action-types';
-import { GET_HOTELS } from "../queries/hotels";
-import { GET_CURRENT_USER } from "../queries/user";
-import { getClient } from "../apollo-client";
-import { LOGIN, LOGOUT, REGISTER, CREATE_HOTEL } from '../mutations/auth';
-import cookieCutter from "cookie-cutter";
-import Cookies from "cookies";
-import moment from "moment";
+import actions from './action-types'
+import { GET_HOTELS } from "../queries/hotels"
+import { GET_CURRENT_USER } from "../queries/user"
+import { getClient } from "../apollo-client"
+import { LOGIN, LOGOUT, REGISTER, CREATE_HOTEL } from '../mutations/auth'
+import cookieCutter from "cookie-cutter"
+import Cookies from "cookies"
+import moment from "moment"
 
 
 //TODO add function for creating a hotel
@@ -51,8 +51,8 @@ export const getCurrentUser = (ctx) => async dispatch => {
         console.log(error)
     }
 }
-// ?
-function CreateHotel(dispatch, token) {
+// -----------Create Hotel function begin -------------
+function NewHotel(dispatch, token) {
     cookieCutter.set(
         "token",
         token,
@@ -61,7 +61,7 @@ function CreateHotel(dispatch, token) {
         })
     dispatch(getCreateHotel());
 }
-// ?
+// -----------Create Hotel function end -------------
 
 function logUser(dispatch, token) {
     cookieCutter.set(
@@ -118,21 +118,21 @@ export const register = variables => async dispatch => {
         console.log(error)
     }
 }
-// ?
-export const createHotel = variables => async dispatch => {
+// ------------- CreateHotel const begin ------------
+export const CreateHotel = variables => async dispatch => {
     try {
         const response = await getClient().mutate({
             mutation: CREATE_HOTEL,
             variables,
         });
-        if (response?.input?.createHotel) {
-            const token = response.input.createHotel;
-            CreateHotel(dispatch, token);
+        if (response?.data?.createHotel) {
+            const token = response.data.createHotel;
+            NewHotel(dispatch, token);
         }
         return response;
     } catch (error) {
         console.log(error)
     }
 }
-// ?
+// ------------- CreateHotel const end ------------
 
