@@ -2,6 +2,7 @@ import actions from './action-types';
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 
+
 function hotels(state = [], action) {
     switch (action.type) {
         case actions.SET_HOTELS: {

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import DefaultLayout from '../../components/layouts/default'
-import CreateHotel from "../../components/user/create-hotel"
+import CreateHotel from "../../components/hotels/create-hotel"
 import HotelItem from "../../components/hotels/HotelItem"
 import { useSelector, useDispatch } from "react-redux"
 import { getHotels } from "../../redux/actions"

@@ -56,7 +56,6 @@ const CreateNewHotel = (props) => {
         return options;
     }
 
-
     return (
         <>
             <Form onSubmit={e => {

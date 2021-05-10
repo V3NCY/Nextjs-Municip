@@ -7,7 +7,6 @@ import cookieCutter from "cookie-cutter"
 import Cookies from "cookies"
 import moment from "moment"
 
-
 //TODO add function for creating a hotel
 // copy from register
 
