@@ -2,7 +2,9 @@ import '../styles/index.scss'
 import App from "next/app"
 import { wrapper } from "../redux/wrapper"
 import { getCurrentUser } from '../redux/actions'
-
+// import HotelContainer from "../components/hotels/Hotel/HotelContainer"
+// import HotelsContainer from "../components/hotels/Hotel/HotelsContainer"
+// import { MemoryRouter as Router, Switch, Route } from "react-router-dom"
 
 class WrappedApp extends App {
   static getInitialProps = async ({ Component, ctx }) => {
@@ -21,6 +23,7 @@ class WrappedApp extends App {
           : {}),
         appProp: ctx.pathname,
         currentUser,
+
       },
       props: {
         currentUser,
@@ -32,7 +35,12 @@ class WrappedApp extends App {
   render() {
 
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    return <Router>
+      <Component {...pageProps} />;
+              <Route path="/hotels" exact component={HotelsContainer} />
+      <Route path="/hotels/:id" component={HotelContainer} />
+
+    </Router>
   }
 }
 

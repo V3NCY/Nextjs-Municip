@@ -12,7 +12,7 @@ import {
 } from 'reactstrap'
 
 import React, { useState } from 'react'
-import { CreateHotel } from '../../redux/actions'
+import { createHotel } from '../../redux/actions'
 import { useDispatch } from "react-redux"
 
 const CreateNewHotel = (props) => {
@@ -36,7 +36,7 @@ const CreateNewHotel = (props) => {
         const hotelData = {
             data: variables
         }
-        const response = await dispatch(CreateHotel(hotelData))
+        const response = await dispatch(createHotel(hotelData))
         if (response) {
             onCreateHotel();
         }

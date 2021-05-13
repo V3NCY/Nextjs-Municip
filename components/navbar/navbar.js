@@ -33,7 +33,6 @@ const Navigation = () => {
         </NavItem>
     }
 
-
     return (
         <Navbar color="dark" dark expand="md" className="shadow p-2 bg-light">
             <NavbarBrand href="/" className="ml-2">
