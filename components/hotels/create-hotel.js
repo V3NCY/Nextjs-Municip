@@ -61,7 +61,7 @@ const CreateNewHotel = (props) => {
             <Form onSubmit={e => {
                 e.preventDefault();
                 onCreateHotel();
-            }} className="my-">
+            }} className="my-4">
                 <FormGroup>
                     <Label for="title">Заглавие:</Label>
                     <Input

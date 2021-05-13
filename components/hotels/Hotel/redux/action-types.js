@@ -1,6 +1,7 @@
 const actionTypes = {
     SET_HOTELS: 'SET_HOTELS',
-    SET_CURRENT_USER: 'SET_CURRENT_USER',
+    VIEW_HOTEL: 'VIEW_HOTEL',
+    SEARCH: 'SEARCH',
 
 };
 export default actionTypes;

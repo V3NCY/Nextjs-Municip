@@ -25,4 +25,5 @@ function currentUser(state = {}, action) {
     }
 }
 
+
 export default combineReducers({ hotels, currentUser });

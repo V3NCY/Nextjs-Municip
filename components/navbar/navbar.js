@@ -73,6 +73,11 @@ const Navigation = () => {
                         </Link>
                     </NavItem>
                     <NavItem>
+                        <Link href='/restaurants'>
+                            <a className="nav-link">Ресторанти</a>
+                        </Link>
+                    </NavItem>
+                    <NavItem>
                         <Link href='/information'>
                             <a className="nav-link">Информация</a>
                         </Link>

@@ -41,6 +41,7 @@ export default function Admin(props) {
       <Progress animated value={2 * 5}> Потребители </Progress>
       <br />
       <Progress animated color="warning" value={75} > Извършена дейност </Progress>
+
     </DefaultLayout>
   )
 }

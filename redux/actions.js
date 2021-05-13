@@ -19,6 +19,12 @@ export function setHotels(hotels) {
 export function setCurrenUser(user) {
     return { type: actions.SET_CURRENT_USER, payload: user };
 }
+
+// ---- setCreateHotel ----
+export function setCreateHotel(hotels) {
+    return { type: actions.CREATE_HOTEL, payload: hotels };
+    // ---- End setCreateHotel ----
+}
 export const getHotels = () => async dispatch => {
     try {
         const response = await getClient().query({
@@ -50,8 +56,31 @@ export const getCurrentUser = (ctx) => async dispatch => {
         console.log(error)
     }
 }
+
+// -----------getCreateHotel--------------
+export const getCreateHotel = (ctx) => async dispatch => {
+    try {
+        const response = await getClient(ctx).query({
+            query: GET_HOTELS,
+        });
+        if (response?.data?.createHotel) {
+            dispatch(setCreateHotel(response.data.createHotel));
+        }
+        return response;
+    } catch (error) {
+        if (process.browser) {
+            cookieCutter.set('token', '', { expires: new Date(0) })
+        } else {
+            const cookies = new Cookies(ctx.req, ctx.res);
+            cookies.set("token", "", { expires: new Date(0) })
+        }
+        console.log(error)
+    }
+}
+// -----------End getCreateHotel--------------
+
 // -----------Create Hotel function begin -------------
-function NewHotel(dispatch, token) {
+function newHotel(dispatch, token) {
     cookieCutter.set(
         "token",
         token,
@@ -118,7 +147,7 @@ export const register = variables => async dispatch => {
     }
 }
 // ------------- CreateHotel const begin ------------
-export const CreateHotel = variables => async dispatch => {
+export const createHotel = variables => async dispatch => {
     try {
         const response = await getClient().mutate({
             mutation: CREATE_HOTEL,
@@ -126,7 +155,7 @@ export const CreateHotel = variables => async dispatch => {
         });
         if (response?.data?.createHotel) {
             const token = response.data.createHotel;
-            NewHotel(dispatch, token);
+            newHotel(dispatch, token);
         }
         return response;
     } catch (error) {
