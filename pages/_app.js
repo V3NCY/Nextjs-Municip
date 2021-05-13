@@ -35,12 +35,12 @@ class WrappedApp extends App {
   render() {
 
     const { Component, pageProps } = this.props;
-    return <Router>
-      <Component {...pageProps} />;
-              <Route path="/hotels" exact component={HotelsContainer} />
-      <Route path="/hotels/:id" component={HotelContainer} />
+    // return <Router>
+    //   <Component {...pageProps} />;
+    //           <Route path="/hotels" exact component={HotelsContainer} />
+    //   <Route path="/hotels/:id" component={HotelContainer} />
 
-    </Router>
+    // </Router>
   }
 }
 
