@@ -20,7 +20,7 @@ const CreateNewHotel = (props) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [extras, setExtras] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(parseFloat("1"));
     const [image, setImage] = useState('');
 
     const dispatch = useDispatch();
@@ -32,14 +32,14 @@ const CreateNewHotel = (props) => {
             extras,
             rating,
             image,
-        }
-        const hotelData = {
-            data: variables
-        }
-        const response = await dispatch(createHotel(hotelData))
+        };
+        const CreateHotelInput = {
+            input: { ...variables }
+        };
+        const response = await dispatch(createHotel(CreateHotelInput));
         if (response) {
             onCreateHotel();
-        }
+        };
     }
     const getCreateHotel = () => {
 
@@ -50,7 +50,7 @@ const CreateNewHotel = (props) => {
 
     const getOptions = () => {
         let options = [];
-        for (let i = 1; i < 7; i++) {
+        for (let i = parseFloat("1"); i < parseFloat("7"); i++) {
             options.push(<option value={i} key={i}>{i}</option>)
         }
         return options;
@@ -99,7 +99,7 @@ const CreateNewHotel = (props) => {
                         name="rating"
                         id="rating"
                         value={rating}
-                        onChange={e => setRating(e.target.value)}
+                        onChange={e => setRating(parseFloat(e.target.value))}
                     >
                         {getOptions()}
                     </Input>

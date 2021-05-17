@@ -163,4 +163,3 @@ export const createHotel = variables => async dispatch => {
     }
 }
 // ------------- CreateHotel const end ------------
-

@@ -2,7 +2,11 @@ import DefaultLayout from '../../components/layouts/default'
 import Head from 'next/head'
 import { wrapper } from "../../redux/wrapper"
 import { Alert } from 'reactstrap'
-import { Progress } from 'reactstrap'
+// import { Progress } from 'reactstrap'
+import Dashboard from "./dashboard"
+import Icons from "./icons"
+import UserProfile from "./user-profile"
+import Notifications from "./notifications"
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();
@@ -23,7 +27,7 @@ export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, 
 });
 
 
-export default function Admin(props) {
+export default function Admin({ children }) {
 
   return (
     <DefaultLayout>
@@ -38,10 +42,13 @@ export default function Admin(props) {
         <p> Тук ще намерите най-важните инструменти за администратора...
         </p>
       </Alert>
-      <Progress animated value={2 * 5}> Потребители </Progress>
+      {/* <Progress animated value={2 * 5}> Потребители </Progress>
       <br />
-      <Progress animated color="warning" value={75} > Извършена дейност </Progress>
-
+      <Progress animated color="warning" value={75} > Извършена дейност </Progress> */}
+      <Dashboard />
+      <Icons />
+      <UserProfile />
+      <Notifications />
     </DefaultLayout>
   )
 }
