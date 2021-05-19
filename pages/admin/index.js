@@ -6,7 +6,6 @@ import { Alert } from 'reactstrap'
 import Dashboard from "./dashboard"
 import Icons from "./icons"
 import UserProfile from "./user-profile"
-import Notifications from "./notifications"
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();
@@ -46,9 +45,8 @@ export default function Admin({ children }) {
       <br />
       <Progress animated color="warning" value={75} > Извършена дейност </Progress> */}
       <Dashboard />
-      <Icons />
       <UserProfile />
-      <Notifications />
+      <Icons />
     </DefaultLayout>
   )
 }

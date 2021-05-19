@@ -46,7 +46,7 @@ function Dashboard() {
                     <Card>
                         <CardHeader color="warning" stats icon>
                             <CardIcon color="warning">
-                                <Icon className="fas fa-user"></Icon>
+                                <Icon ></Icon>
                             </CardIcon>
                             <p className={classes.cardCategory}>Използвано пространство</p>
                             <h3 className={classes.cardTitle}>
