@@ -12,6 +12,29 @@ function hotels(state = [], action) {
             return state;
     }
 }
+
+
+function hardcodedHotels(state = [], action) {
+    switch (action.type) {
+        case actions.SET_HARCODED_HOTELS: {
+            return [...action.payload]
+        }
+        default:
+            return state;
+    }
+}
+
+function searchValue(state = "", action) {
+    switch (action.type) {
+        case actions.SET_SEARCH_VALUE: {
+            return action.payload
+        }
+        default:
+            return state;
+    }
+}
+
+
 function currentUser(state = {}, action) {
     switch (action.type) {
         case actions.SET_CURRENT_USER: {
@@ -26,4 +49,4 @@ function currentUser(state = {}, action) {
 }
 
 
-export default combineReducers({ hotels, currentUser });
+export default combineReducers({ hotels, hardcodedHotels, currentUser, searchValue });

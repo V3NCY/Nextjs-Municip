@@ -2,10 +2,10 @@ import React from "react"
 import Head from 'next/head'
 import HotelsLayout from "../../components/layouts/hotels"
 import { connect } from "react-redux";
-import { setHotels } from "../../components/hotels/Hotel/redux/actions"
+import { getHardcodedHotels } from "../../redux/actions";
+import HotelsContainer from "../../components/hotels/Hotel/HotelsContainer"
 
-function Hotels({ dispatch }) {
-  dispatch(setHotels());
+function Hotels() {
 
   return (
     <HotelsLayout>
@@ -14,11 +14,12 @@ function Hotels({ dispatch }) {
       </Head>
       <h1>Хотели</h1>
       <div className="hotels"></div>
+      <HotelsContainer />
     </HotelsLayout>
   )
 }
 
-export default connect()(Hotels);
+export default Hotels;
 
 
 

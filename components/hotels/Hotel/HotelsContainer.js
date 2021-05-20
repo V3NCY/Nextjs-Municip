@@ -1,22 +1,41 @@
-import {connect} from 'react-redux';
-import Hotels from '../Hotel/Hotels';
+import HotelCard from "./HotelCard";
+import SearchBar from "./SearchBar";
 
-function searchByHotel(hotels, key) {
-  return hotels.filter(hotel => hotel.name.toLowerCase().includes(key.toLowerCase()) || hotel.city.toLowerCase().includes(key.toLowerCase()));
-}
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getHardcodedHotels } from "../../../redux/actions";
 
-function getSearchResult(hotels, key) {
-  if (key.length > 0) {
-    return searchByHotel(hotels, key);
+function HotelList() {
+
+  const hardcodedHotels = useSelector(state => state.hardcodedHotels);
+  const searchValue = useSelector(state => state.searchValue);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getHardcodedHotels());
+  }, []);
+
+  const getHotelList = () => {
+    const hotels = hardcodedHotels.filter(hotel => hotel.name.toLowerCase().indexOf(searchValue) !== -1)
+
+    if (!hotels.length) {
+      return null;
+    }
+    const hotelList = hotels.map(hotel => {
+      return <HotelCard
+        key={hotel.id}
+        hotel={hotel}
+      ></HotelCard>
+    })
+    return hotelList;
   }
 
-  return hotels;
+  return <>
+    <div className="row">
+      <SearchBar />
+      {getHotelList()}
+    </div>
+  </>
 }
-
-function mapStateToProps(state) {
-  return {
-    hotels: getSearchResult(state.hotels, state.search_key)
-  };
-}
-
-export default connect(mapStateToProps)(Hotels);
+export default HotelList;

@@ -12,6 +12,7 @@ const initialState = {
 };
 
 function booking(state = initialState, action) {
+  debugger
   switch (action.type) {
     case SET_HOTELS: {
       return {

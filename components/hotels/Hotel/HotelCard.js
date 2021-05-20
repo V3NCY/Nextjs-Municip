@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 // import "../Hotel/scss/card.scss";
 import CardMedia from "./CardMedia";
 import Booking from "./Booking";
+import Link from "next/link"
 
 function HotelCard({ hotel, expanded }) {
   let actions = (
     <Link
-      to={`/hotels/${hotel.id}`}
+      href={`/hotels/${hotel.id}`}
       className="card__link"
       title={`Резервирайте сега ${hotel.name}`}
     >
@@ -25,7 +26,7 @@ function HotelCard({ hotel, expanded }) {
       <CardMedia hotel={hotel} />
 
       <div className="card-content">
-        <Link to={`/hotels/${hotel.id}`} className="card__name">
+        <Link href={`/hotels/${hotel.id}`} className="card__name">
           {hotel.name}
         </Link>
         <p className="card__description">{hotel.description}</p>

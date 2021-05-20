@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import SearchBar from '../Hotel/Bar';
+import SearchBar from './SearchBar';
 
 function mapStateToProps(state) {
   return {

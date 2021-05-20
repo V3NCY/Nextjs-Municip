@@ -13,4 +13,10 @@ export const GET_HOTELS = gql`
   }
 `;
 
+export const GET_HARDCODED_HOTELS = gql`
+query getHardcodedHotels {
+  hardcodedHotels 
+}
+`;
+
 

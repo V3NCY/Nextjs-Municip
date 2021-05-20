@@ -1,5 +1,5 @@
 import actions from './action-types'
-import { GET_HOTELS } from "../queries/hotels"
+import { GET_HOTELS, GET_HARDCODED_HOTELS } from "../queries/hotels"
 import { GET_CURRENT_USER } from "../queries/user"
 import { getClient } from "../apollo-client"
 import { LOGIN, LOGOUT, REGISTER, CREATE_HOTEL } from '../mutations/auth'
@@ -16,6 +16,9 @@ import moment from "moment"
 export function setHotels(hotels) {
     return { type: actions.SET_HOTELS, payload: hotels };
 }
+export function setHardcodedHotels(hotels) {
+    return { type: actions.SET_HARCODED_HOTELS, payload: hotels };
+}
 export function setCurrenUser(user) {
     return { type: actions.SET_CURRENT_USER, payload: user };
 }
@@ -25,6 +28,11 @@ export function setCreateHotel(hotels) {
     return { type: actions.CREATE_HOTEL, payload: hotels };
     // ---- End setCreateHotel ----
 }
+
+export function setSearchValue(value) {
+    return { type: actions.SET_SEARCH_VALUE, payload: value };
+}
+
 export const getHotels = () => async dispatch => {
     try {
         const response = await getClient().query({
@@ -37,6 +45,20 @@ export const getHotels = () => async dispatch => {
         console.log(error)
     }
 }
+
+export const getHardcodedHotels = () => async dispatch => {
+    try {
+        const response = await getClient().query({
+            query: GET_HARDCODED_HOTELS,
+        });
+        if (response?.data?.hardcodedHotels?.hotels) {
+            dispatch(setHardcodedHotels(response.data.hardcodedHotels.hotels));
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const getCurrentUser = (ctx) => async dispatch => {
     try {
         const response = await getClient(ctx).query({
