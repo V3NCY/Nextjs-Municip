@@ -13,10 +13,30 @@ function hotels(state = [], action) {
     }
 }
 
+function restaurants(state = [], action) {
+    switch (action.type) {
+        case actions.SET_RESTAURANTS: {
+            return [...action.payload]
+        }
+        default:
+            return state;
+    }
+}
+
 
 function hardcodedHotels(state = [], action) {
     switch (action.type) {
         case actions.SET_HARCODED_HOTELS: {
+            return [...action.payload]
+        }
+        default:
+            return state;
+    }
+}
+
+function hardcodedRestaurants(state = [], action) {
+    switch (action.type) {
+        case actions.SET_HARCODED_RESTAURANTS: {
             return [...action.payload]
         }
         default:
@@ -49,4 +69,4 @@ function currentUser(state = {}, action) {
 }
 
 
-export default combineReducers({ hotels, hardcodedHotels, currentUser, searchValue });
+export default combineReducers({ hotels, hardcodedHotels, restaurants, hardcodedRestaurants, currentUser, searchValue });

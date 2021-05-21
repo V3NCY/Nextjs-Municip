@@ -19,6 +19,9 @@ export function setHotels(hotels) {
 export function setHardcodedHotels(hotels) {
     return { type: actions.SET_HARCODED_HOTELS, payload: hotels };
 }
+export function setHardcodedRestaurants(restaurants) {
+    return { type: actions.SET_HARCODED_RESTAURANTS, payload: restaurants };
+}
 export function setCurrenUser(user) {
     return { type: actions.SET_CURRENT_USER, payload: user };
 }
@@ -45,6 +48,18 @@ export const getHotels = () => async dispatch => {
         console.log(error)
     }
 }
+export const getRestaurants = () => async dispatch => {
+    try {
+        const response = await getClient().query({
+            query: GET_RESTAURANTS,
+        });
+        if (response?.data?.restaurants) {
+            dispatch(setRestaurants(response.data.restaurants));
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export const getHardcodedHotels = () => async dispatch => {
     try {
@@ -53,6 +68,18 @@ export const getHardcodedHotels = () => async dispatch => {
         });
         if (response?.data?.hardcodedHotels?.hotels) {
             dispatch(setHardcodedHotels(response.data.hardcodedHotels.hotels));
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const getHardcodedRestaurants = () => async dispatch => {
+    try {
+        const response = await getClient().query({
+            query: GET_HARDCODED_RESTAURANTS,
+        });
+        if (response?.data?.getHardcodedRestaurants?.restaurants) {
+            dispatch(setHardcodedRestaurants(response.data.hardcodedRestaurants.restaurants));
         }
     } catch (error) {
         console.log(error)
