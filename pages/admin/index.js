@@ -3,9 +3,7 @@ import Head from 'next/head'
 import { wrapper } from "../../redux/wrapper"
 import { Alert } from 'reactstrap'
 // import { Progress } from 'reactstrap'
-import Dashboard from "./dashboard"
-import Icons from "./icons"
-import UserProfile from "./user-profile"
+
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();
@@ -44,9 +42,6 @@ export default function Admin({ children }) {
       {/* <Progress animated value={2 * 5}> Потребители </Progress>
       <br />
       <Progress animated color="warning" value={75} > Извършена дейност </Progress> */}
-      <Dashboard />
-      <UserProfile />
-      <Icons />
     </DefaultLayout>
   )
 }

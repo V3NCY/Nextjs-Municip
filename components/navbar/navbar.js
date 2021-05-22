@@ -9,7 +9,6 @@ import {
     Form,
     Button,
 } from 'reactstrap'
-import { FormControl } from "react-bootstrap"
 import Logo from '../../mountain.svg'
 import Link from 'next/link'
 import UserMenu from "../user/menu"
@@ -29,6 +28,16 @@ const Navigation = () => {
         return <NavItem>
             <Link href='/admin'>
                 <a className="nav-link">Админ</a>
+            </Link>
+        </NavItem>
+    }
+    const getUserProfileNavItem = () => {
+        if (!currentUser.roles || !currentUser.roles.includes("USER")) {
+            return null;
+        }
+        return <NavItem>
+            <Link href='/profile'>
+                <a className="nav-link">Моят профил</a>
             </Link>
         </NavItem>
     }
@@ -93,6 +102,7 @@ const Navigation = () => {
                     </NavItem>
 
                     {getAdminNavItem()}
+                    {getUserProfileNavItem()}
                 </Nav>
                 <UserMenu />
                 <RegisterUser />
