@@ -9,9 +9,9 @@ import Rating from "./rating"
 import constants from '../../constants'
 
 
-const HotelItem = props => {
+const RestaurantItem = props => {
 
-    const getHotelImage = () => {
+    const getRestaurantImage = () => {
         if (!props.image) {
             return null;
         }
@@ -25,7 +25,7 @@ const HotelItem = props => {
     return (
         <div className="col-md-4">
             <Card className="mb-3">
-                {getHotelImage()}
+                {getRestaurantImage()}
                 <CardBody>
                     <div className="d-flex align-items-center mb-2">
                         <Rating rating={props.rating} />
@@ -40,4 +40,4 @@ const HotelItem = props => {
     );
 };
 
-export default HotelItem
+export default RestaurantItem

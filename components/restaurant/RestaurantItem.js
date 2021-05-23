@@ -9,30 +9,30 @@ import Rating from "./rating"
 import constants from '../../constants'
 
 
-const HotelItem = props => {
+const RestaurantItem = props => {
 
-    const getHotelImage = () => {
+    const getRestaurantImage = () => {
         if (!props.image) {
             return null;
         }
         return <CardImg
             top
             width="100%"
-            src={`${constants.imgPath}${props.image}`}
+            src={`${constants.resPath}${props.image}`}
         />
     }
 
     return (
         <div className="col-md-4">
             <Card className="mb-3">
-                {getHotelImage()}
+                {getRestaurantImage()}
                 <CardBody>
                     <div className="d-flex align-items-center mb-2">
                         <Rating rating={props.rating} />
                         <CardTitle tag="h5" className="ml-3 text-truncate mb-0">{props.title}</CardTitle>
                     </div>
-                    <CardText className="hotel-extras ml-3 text-truncate mb-0">{props.extras}</CardText>
-                    <CardText className="hotel-description ml-3 text-truncate mb-0">{props.description}</CardText>
+                    <CardText className="restaurant-extras ml-3 text-truncate mb-0">{props.extras}</CardText>
+                    <CardText className="restaurant-description ml-3 text-truncate mb-0">{props.description}</CardText>
 
                 </CardBody>
             </Card>
@@ -40,4 +40,4 @@ const HotelItem = props => {
     );
 };
 
-export default HotelItem
+export default RestaurantItem

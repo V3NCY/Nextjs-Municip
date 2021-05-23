@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import DefaultLayout from '../../components/layouts/default'
-import RestaurantsContainer from "../../components/restaurants/RestaurantsContainer"
+import RestaurantsContainer from "../../components/restaurant/RestaurantsContainer"
 
 export default function Restaurants() {
     return (

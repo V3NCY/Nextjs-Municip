@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "cypress open"
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",
@@ -53,6 +54,7 @@
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "autoprefixer": "^10.2.5",
+    "cypress": "^7.3.0",
     "postcss": "^8.2.15",
     "tailwindcss": "^2.1.2"
   }

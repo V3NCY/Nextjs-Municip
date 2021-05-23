@@ -13,4 +13,4 @@ function Message({ hotelName, startDate, endDate, duration }) {
   );
 }
 
-export default Message;
+export default Message

@@ -9,7 +9,7 @@ function Hotels({ hotels }) {
     hotels.length > 0 ? (
       hotels.map((h) => <Card key={h.id} hotel={h} />)
     ) : (
-      <p>Няма намерени хотели</p>
+      <p>Няма намерени хотели...</p>
     );
 
   return (
