@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import Card from "./RestaurantCard";
 import SearchBar from "./SearchBar";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -22,10 +22,10 @@ function RestaurantList() {
       return null;
     }
     const restaurantList = restaurants.map(restaurant => {
-      return <RestaurantCard
+      return <Card
         key={restaurant.id}
         restaurant={restaurant}
-      ></RestaurantCard>
+      ></Card>
     })
     return restaurantList;
   }

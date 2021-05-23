@@ -1,8 +1,9 @@
 import actions from './action-types'
 import { GET_HOTELS, GET_HARDCODED_HOTELS } from "../queries/hotels"
+import { GET_RESTAURANTS, GET_HARDCODED_RESTAURANTS } from "../queries/restaurants"
 import { GET_CURRENT_USER } from "../queries/user"
 import { getClient } from "../apollo-client"
-import { LOGIN, LOGOUT, REGISTER, CREATE_HOTEL } from '../mutations/auth'
+import { LOGIN, LOGOUT, REGISTER, CREATE_HOTEL, CREATE_RESTAURANT } from '../mutations/auth'
 import cookieCutter from "cookie-cutter"
 import Cookies from "cookies"
 import moment from "moment"
@@ -17,10 +18,14 @@ export function setHotels(hotels) {
     return { type: actions.SET_HOTELS, payload: hotels };
 }
 export function setHardcodedHotels(hotels) {
-    return { type: actions.SET_HARCODED_HOTELS, payload: hotels };
+    return { type: actions.SET_HARDCODED_HOTELS, payload: hotels };
+
+}
+export function setRestaurants(restaurants) {
+    return { type: actions.SET_RESTAURANTS, payload: restaurants };
 }
 export function setHardcodedRestaurants(restaurants) {
-    return { type: actions.SET_HARCODED_RESTAURANTS, payload: restaurants };
+    return { type: actions.SET_HARDCODED_RESTAURANTS, payload: restaurants };
 }
 export function setCurrenUser(user) {
     return { type: actions.SET_CURRENT_USER, payload: user };
@@ -30,6 +35,11 @@ export function setCurrenUser(user) {
 export function setCreateHotel(hotels) {
     return { type: actions.CREATE_HOTEL, payload: hotels };
     // ---- End setCreateHotel ----
+}
+// ---- setCreateRestaurant ----
+export function setCreateRestaurant(restaurants) {
+    return { type: actions.CREATE_RESTAURANT, payload: restaurants };
+    // ---- End setCreateRestaurant ----
 }
 
 export function setSearchValue(value) {
@@ -140,6 +150,40 @@ function newHotel(dispatch, token) {
 }
 // -----------Create Hotel function end -------------
 
+// -----------getCreateRestaurant--------------
+export const getCreateRestaurant = (ctx) => async dispatch => {
+    try {
+        const response = await getClient(ctx).query({
+            query: GET_RESTAURANTS,
+        });
+        if (response?.data?.createRestaurant) {
+            dispatch(setCreateRestaurant(response.data.createRestaurant));
+        }
+        return response;
+    } catch (error) {
+        if (process.browser) {
+            cookieCutter.set('token', '', { expires: new Date(0) })
+        } else {
+            const cookies = new Cookies(ctx.req, ctx.res);
+            cookies.set("token", "", { expires: new Date(0) })
+        }
+        console.log(error)
+    }
+}
+// -----------End getCreateRestaurant--------------
+
+// -----------Create Restaurant function begin -------------
+function newRestaurant(dispatch, token) {
+    cookieCutter.set(
+        "token",
+        token,
+        {
+            expires: new moment().add(1, "d")._d
+        })
+    dispatch(getCreateRestaurant());
+}
+// -----------Create Restaurant function end -------------
+
 function logUser(dispatch, token) {
     cookieCutter.set(
         "token",
@@ -212,3 +256,20 @@ export const createHotel = variables => async dispatch => {
     }
 }
 // ------------- CreateHotel const end ------------
+// ------------- CreateRestaurant const begin ------------
+export const createRestaurant = variables => async dispatch => {
+    try {
+        const response = await getClient().mutate({
+            mutation: CREATE_RESTAURANT,
+            variables,
+        });
+        if (response?.data?.createRestaurant) {
+            const token = response.data.createRestaurant;
+            newRestaurant(dispatch, token);
+        }
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+}
+// ------------- CreateRestaurant const end ------------

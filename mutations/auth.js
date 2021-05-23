@@ -31,3 +31,15 @@ export const CREATE_HOTEL = gql`
     }
   }
 `;
+export const CREATE_RESTAURANT = gql`
+  mutation CreateRestaurant($input: CreateRestaurantInput!) {
+    createRestaurant(input: $input) {
+      _id
+      title
+      description
+      extras
+      rating
+      image
+    }
+  }
+`;

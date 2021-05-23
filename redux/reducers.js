@@ -26,7 +26,7 @@ function restaurants(state = [], action) {
 
 function hardcodedHotels(state = [], action) {
     switch (action.type) {
-        case actions.SET_HARCODED_HOTELS: {
+        case actions.SET_HARDCODED_HOTELS: {
             return [...action.payload]
         }
         default:
@@ -36,7 +36,7 @@ function hardcodedHotels(state = [], action) {
 
 function hardcodedRestaurants(state = [], action) {
     switch (action.type) {
-        case actions.SET_HARCODED_RESTAURANTS: {
+        case actions.SET_HARDCODED_RESTAURANTS: {
             return [...action.payload]
         }
         default:

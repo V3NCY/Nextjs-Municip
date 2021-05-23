@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { viewRestaurant } from "./redux/actions";
+import { viewRestaurant } from "../restaurant/redux/actions";
 import RestaurantCard from "./RestaurantCard";
 import PropTypes from "prop-types";
 

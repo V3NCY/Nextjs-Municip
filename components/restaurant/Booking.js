@@ -6,7 +6,7 @@ import "moment/locale/en-gb";
 import moment from "moment";
 import Message from "./Message";
 import PropTypes from "prop-types";
-import CommentInput from "./Comments/containers/CommentInput";
+import CommentInput from "./Comments/components/CommentInput"
 import { Button } from "reactstrap";
 
 class Booking extends Component {
