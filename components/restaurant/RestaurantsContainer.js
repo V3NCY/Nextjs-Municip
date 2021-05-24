@@ -1,8 +1,8 @@
-import Card from "./RestaurantCard";
-import SearchBar from "./SearchBar";
+import Card from "./RestaurantCard.js";
+import SearchBar from "./SearchBar.js";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getHardcodedRestaurants } from "../../redux/actions";
+import { getHardcodedRestaurants } from "../../redux/actions.js"
 
 function RestaurantList() {
 

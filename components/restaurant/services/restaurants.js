@@ -1,4 +1,4 @@
-import { restaurants } from './data.json';
+import { restaurants } from '../services/data.json';
 
 export default {
   getRestaurants() {

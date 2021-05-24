@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { viewRestaurant } from "../restaurant/redux/actions";
-import RestaurantCard from "./RestaurantCard";
+import { viewRestaurant } from "../restaurant/redux/actions.js";
+import RestaurantCard from "./RestaurantCard.js";
 import PropTypes from "prop-types";
 
 class Restaurant extends Component {

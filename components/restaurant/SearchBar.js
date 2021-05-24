@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
-import { setSearchValue } from "../../redux/actions";
+import { setSearchValue } from "../../redux/actions.js";
 import { useDispatch } from "react-redux";
+
 
 function SearchBar() {
 

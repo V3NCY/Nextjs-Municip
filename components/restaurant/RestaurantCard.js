@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import CardMedia from "./CardMedia";
-import Booking from "./Booking";
+import CardMedia from "./CardMedia.js";
+import Booking from "./Booking.js";
 import Link from "next/link"
 
 function RestaurantCard({ restaurant, expanded }) {

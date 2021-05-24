@@ -4,10 +4,11 @@ import "react-dates/lib/css/_datepicker.css";
 import { DateRangePicker } from "react-dates";
 import "moment/locale/en-gb";
 import moment from "moment";
-import Message from "./Message";
+import Message from "./Message.js";
 import PropTypes from "prop-types";
-import CommentInput from "./Comments/components/CommentInput"
+import CommentInput from "./Comments/components/CommentInput.js"
 import { Button } from "reactstrap";
+
 
 class Booking extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Card from "./RestaurantCard";
-import SearchBar from "./SearchBarContainer";
+import Card from "./RestaurantCard.js";
+import SearchBar from "./SearchBarContainer.js";
 
 function Restaurants({ restaurants }) {
   const count = restaurants.length > 0 ? `${restaurants.length} ` : "";
@@ -9,7 +9,7 @@ function Restaurants({ restaurants }) {
     restaurants.length > 0 ? (
       restaurants.map((h) => <Card key={h.id} restaurant={h} />)
     ) : (
-      <p>Няма намерени ресторанти</p>
+      <p>Няма намерени ресторанти...</p>
     );
 
   return (

@@ -1,8 +1,7 @@
-import RestaurantItem from "./RestaurantItem"
-
+import RestaurantItem from "./RestaurantItem.js"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
-import { getRestaurants } from "../../redux/actions"
+import { getRestaurants } from "../../components/restaurant/redux/actions"
 
 function RestaurantsList(props) {
 
@@ -18,7 +17,7 @@ function RestaurantsList(props) {
         }
         const restaurantsList = restaurants.map(restaurant => {
             return <RestaurantItem
-                key={restaurant._id}
+                key={restaurant.id}
                 title={restaurant.title}
                 description={restaurant.description}
                 extras={restaurant.extras}

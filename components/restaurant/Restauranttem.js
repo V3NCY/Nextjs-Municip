@@ -5,8 +5,8 @@ import {
     CardBody,
     CardTitle,
 } from 'reactstrap'
-import Rating from "./rating"
-import constants from '../../constants'
+import Rating from "./rating.js"
+import constants from '../../constants.js'
 
 
 const RestaurantItem = props => {

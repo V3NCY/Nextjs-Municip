@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import Restaurant from './Restaurant';
+import Restaurant from './Restaurant.js';
+
 
 function mapStateToProps(state) {
   return {
