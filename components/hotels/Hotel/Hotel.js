@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { viewHotel } from "../Hotel/redux/actions";
-import HotelCard from "../Hotel/Card";
+import HotelCard from "../../hotels/Hotel/HotelCard";
 import PropTypes from "prop-types";
 
 class Hotel extends Component {

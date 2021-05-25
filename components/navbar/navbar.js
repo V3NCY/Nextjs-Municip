@@ -15,7 +15,6 @@ import UserMenu from "../user/menu"
 import { useSelector } from "react-redux"
 import RegisterUser from '../user/register'
 
-
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);

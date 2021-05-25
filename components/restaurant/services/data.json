@@ -5,8 +5,8 @@
       "name": "Ресторант Дядо Либен",
       "stars": 4,
       "images": [
-        "https://lh3.googleusercontent.com/proxy/KWN4rEnWlKRhGC4TiFR2in5F6583ovO_b67F9aNlp_wtvmwPmTaA6Z3xQa_JeYlCFvCJMJ8ze9R1BexGtpCPthPHh7Ionb5wftpQRylUpeYkKFLMjawY3Fghp75FyQ",
         "https://businessportal.bg/wp-content/uploads/2016/04/img_8179_12733620-2.jpg",
+        "https://lh3.googleusercontent.com/proxy/ZyzbEqJO9KVVFr1VUL1LRu_LIzVGAA5hZ7XuLZ5KWA9ZcZ3mL7rrlNXGevZxmlK_AHFoC6SiBmixHjaoin_y-Pos43qEfBnbGIYTyL5unnva",
         "https://comunicatorbg.com/dqdo_luben/mehana.jpg"
       ],
       "description": "Ресторант Дядо Либен разполага с богато меню с традиционни ястия.",
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-      "name": "Пицария Копривцщица",
+      "name": "Пицария Копривщица",
       "stars": 3,
       "images": [
         "http://restaurantbulgaria.weebly.com/uploads/4/2/2/7/42270081/5018427_orig.jpg",

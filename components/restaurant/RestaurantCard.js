@@ -3,16 +3,18 @@ import PropTypes from "prop-types";
 import CardMedia from "./CardMedia.js";
 import Booking from "./Booking.js";
 import Link from "next/link"
+import { Button } from "reactstrap"
+
 
 function RestaurantCard({ restaurant, expanded }) {
   let actions = (
-    <Link
+    <Button
       href={`/restaurants/${restaurant.id}`}
       className="card__link"
       title={`Резервирайте сега ${restaurant.name}`}
     >
       Резервирайте сега
-    </Link>
+    </Button>
   );
 
   if (expanded) {
