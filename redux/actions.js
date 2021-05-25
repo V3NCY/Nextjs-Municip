@@ -88,7 +88,7 @@ export const getHardcodedRestaurants = () => async dispatch => {
         const response = await getClient().query({
             query: GET_HARDCODED_RESTAURANTS,
         });
-        if (response?.data?.getHardcodedRestaurants?.restaurants) {
+        if (response?.data?.hardcodedRestaurants?.restaurants) {
             dispatch(setHardcodedRestaurants(response.data.hardcodedRestaurants.restaurants));
         }
     } catch (error) {
