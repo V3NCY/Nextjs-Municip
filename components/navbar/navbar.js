@@ -16,6 +16,8 @@ import { useSelector } from "react-redux"
 import RegisterUser from '../user/register'
 import LanguageSelector from "../language/language-selector"
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Navigation = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -112,7 +114,7 @@ const Navigation = () => {
                 <RegisterUser />
                 <Dropdown isOpen={dropdownOpen} toggle={toggle1}>
                     <DropdownToggle caret color="primary">
-                        Езици
+                        <FontAwesomeIcon icon={faGlobeAmericas} />
                     </DropdownToggle>
                     <DropdownMenu>
                         <LanguageSelector />

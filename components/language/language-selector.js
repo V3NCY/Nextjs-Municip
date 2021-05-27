@@ -7,11 +7,11 @@ const Preferences = () => {
   const [languages] = useState([
     {
       code: "en",
-      name: "EN",
+      name: "English",
     },
     {
       code: "bg",
-      name: "BG",
+      name: "Български",
     },
   ]);
 

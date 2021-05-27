@@ -3,7 +3,7 @@ import { parseCookies, setCookie } from "nookies";
 
 export const fallbackLanguage = "en";
 
-export const languages = ["en", "nl"];
+export const languages = ["bg", "en"];
 
 export const validateLanguage = (lang) => {
     return languages.includes(lang) ? lang : fallbackLanguage;
@@ -19,13 +19,13 @@ export const getLanguage = (lang, ctx) => {
 export const redirectToLanguage = (language = fallbackLanguage, res) => {
     if (res) {
         res.writeHead(302, {
-            Location: `/${language}/`,
+            Location: `/${language}`,
         });
 
         return res.end();
     }
 
-    Router.push(`/${language}/`);
+    Router.push(`/${language}`);
 };
 
 export const setLanguageCookie = (ctx, language) => {

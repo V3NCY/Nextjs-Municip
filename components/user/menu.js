@@ -51,16 +51,16 @@ const UserMenu = (props) => {
                 <div className="mx-2">{currentUser.email}</div>
                 <Button size="md mr-2" onClick={() => {
                     onLogout();
-                }} color="danger">Отписване</Button>
+                }} color="danger">Изход</Button>
             </div>
         }
         return <Button onClick={() => {
             setModal(true)
-        }} size="md" color="primary" className='mr-2'>Вписване</Button>
+        }} size="md" color="primary" className='mr-2'>Вход</Button>
     }
 
     return (
-        <>  
+        <>
             { getUserMenu()}
             <Modal isOpen={modal} toggle={toggleModal}>
                 <ModalHeader toggle={toggleModal}>Вписване</ModalHeader>
