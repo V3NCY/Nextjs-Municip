@@ -14,8 +14,13 @@ import Link from 'next/link'
 import UserMenu from "../user/menu"
 import { useSelector } from "react-redux"
 import RegisterUser from '../user/register'
+import LanguageSelector from "../language/language-selector"
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 const Navigation = () => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggle1 = () => setDropdownOpen(prevState => !prevState);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const currentUser = useSelector(state => state.currentUser);
@@ -50,12 +55,12 @@ const Navigation = () => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
                     <NavItem>
-                        <Link href='/'>
+                        <Link href='/' locale="en" >
                             <a className="nav-link">Начало</a>
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link href='/culture'>
+                        <Link href='/culture' locale="en">
                             <a className="nav-link">Култура</a>
                         </Link>
                     </NavItem>
@@ -105,7 +110,14 @@ const Navigation = () => {
                 </Nav>
                 <UserMenu />
                 <RegisterUser />
-
+                <Dropdown isOpen={dropdownOpen} toggle={toggle1}>
+                    <DropdownToggle caret color="primary">
+                        Езици
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <LanguageSelector />
+                    </DropdownMenu>
+                </Dropdown>
                 {/* <Form inline>
                     <FormControl type="text" placeholder="Търси..." className="mr-sm-2" />
                     <Button className="mr-2" color="primary">Търси</Button>
