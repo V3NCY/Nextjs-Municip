@@ -40,7 +40,7 @@ const ProfileContainer = () => {
                 <div className="row">
                     <div className="col-md-4">
                         <div className={styles.profile_work}>
-                            <p>Допълнителни работни</p>
+                            <p>Допълнителни работни линкове</p>
                             <a href="">Website Link</a><br />
                             <a href="">Bootsnipp Profile</a><br />
                             <a href="">Bootply Profile</a>
