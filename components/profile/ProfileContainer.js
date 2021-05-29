@@ -44,7 +44,7 @@ const ProfileContainer = () => {
                             <a href="">Website Link</a><br />
                             <a href="">Bootsnipp Profile</a><br />
                             <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
+                            <p>Умения</p>
                             <a href="">Web Designer</a><br />
                             <a href="">Web Developer</a><br />
                             <a href="">WordPress</a><br />
