@@ -1,7 +1,7 @@
 import DefaultLayout from '../../components/layouts/default'
 import Head from 'next/head'
 import { wrapper } from "../../redux/wrapper"
-import ProfileContainer from "../../components/profile/ProfileContainer"
+import ProfileContainer from '../../components/profile/ProfileContainer'
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();

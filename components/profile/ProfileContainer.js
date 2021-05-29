@@ -1,156 +1,218 @@
-import styles from "../../styles/components/ProfileContainer.module.scss"
+import React, { useState } from "react";
+import {
+    Form,
+    Container,
+    Row,
+    Col,
+    Input,
+    List,
+    Button,
+    Nav,
+    NavItem,
+    NavLink,
+    TabContent,
+    TabPane,
+} from "reactstrap";
+import styles from "../../styles/components/ProfileContainer.module.scss";
+import classnames from "classnames";
 
 const ProfileContainer = () => {
+    const [activeTab, setActiveTab] = useState("1");
+
+    const toggle = (tab) => {
+        if (activeTab !== tab) setActiveTab(tab);
+    };
+
     return (
-        <div className={'background container ' + styles.emp_profile}>
-            <form method="post">
-                <div className="row">
-                    <div className="col-md-4">
+        <Container className={"background " + styles.emp_profile}>
+            <Form>
+                <Row>
+                    <Col md="4">
                         <div className={styles.profile_img}>
-                            <img src="https://ph-files.imgix.net/81c8176a-1b00-4f10-b60f-2ab2729d0a14?auto=format" alt="" />
-                            <div className={styles.file + ' btn btn-lg btn-primary'}>
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                                alt=""
+                            />
+                            <div className={styles.file + " btn btn-lg btn-primary"}>
                                 Change Photo
-                                <input type="file" name="file" />
+                <Input type="file" name="file" />
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-6">
+                    </Col>
+                    <Col md="6">
                         <div className={styles.profile_head}>
-                            <h5>
-                                Jennifer Stones
-                                    </h5>
-                            <h6>
-                                Web Developer and Designer
-                                    </h6>
-                            <p className={styles.profile_rating}>RANKINGS: <span>8/10</span></p>
-                            <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                <li className="nav-item">
-                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Относно</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" id="profile_tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Публикации</a>
-                                </li>
-                            </ul>
+                            <h5>Кристина Джоунс </h5>
+                            <h6>Web Developer and Designer</h6>
+                            <p className={styles.profile_rating}>
+                                RANKINGS: <span>8/10</span>
+                            </p>
+
+                            <div>
+                                <div
+                                    className={styles.profile_tab + " tab-content"}
+                                    id="myTabContent"
+                                >
+                                    <Nav tabs className="nav nav-tabs">
+                                        <NavItem>
+                                            <NavLink
+                                                className={classnames({ active: activeTab === "1" })}
+                                                onClick={() => {
+                                                    toggle("1");
+                                                }}
+                                            >
+                                                За мен
+                      </NavLink>
+                                        </NavItem>
+                                        <NavItem>
+                                            <NavLink
+                                                className={classnames({ active: activeTab === "2" })}
+                                                onClick={() => {
+                                                    toggle("2");
+                                                }}
+                                            >
+                                                Публикации
+                      </NavLink>
+                                        </NavItem>
+                                    </Nav>
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-2">
-                        <input type="submit" className={styles.profile_edit_btn} name="btnAddMore" value="Edit Profile" />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-4">
+                    </Col>
+                    <Col md="2">
+                        <Button
+                            type="submit"
+                            className={styles.profile_edit_btn}
+                            name="btnAddMore"
+                            color="primary">Edit profile</Button >
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md="4">
                         <div className={styles.profile_work}>
-                            <p>Допълнителни работни линкове</p>
-                            <a href="">Website Link</a><br />
-                            <a href="">Bootsnipp Profile</a><br />
+                            <p>Линкове</p>
+                            <a href="">Website Link</a>
+                            <br />
+                            <a href="">Bootsnipp Profile</a>
+                            <br />
                             <a href="">Bootply Profile</a>
                             <p>Умения</p>
-                            <a href="">Web Designer</a><br />
-                            <a href="">Web Developer</a><br />
-                            <a href="">WordPress</a><br />
-                            <a href="">WooCommerce</a><br />
-                            <a href="">PHP, .Net</a><br />
+                            <a href="">Web Designer</a>
+                            <br />
+                            <a href="">Web Developer</a>
+                            <br />
+                            <a href="">WordPress</a>
+                            <br />
+                            <a href="">WooCommerce</a>
+                            <br />
+                            <a href="">PHP, .Net</a>
+                            <br />
                         </div>
-                    </div>
-                    <div className="col-md-8">
-                        <div className={styles.profile_tab + ' tab-content'} id="myTabContent">
-                            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>User Id</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>jenst123</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Име</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>Jennifer Stones</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>И-мейл:</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>jenstones@gmail.com</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Телефон:</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>123 456 7890</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Професия:</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>Web Developer and Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile_tab">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Професионален опит:</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>Expert</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Часова ставка</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>10$/hr</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Всички проекти:</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>230</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Ниво на английски език:</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>Expert</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <label>Достъпност</label>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <p>6 months</p>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <label>Биография</label><br />
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
-                            </div>
+                    </Col>
+                    <Col md="8">
+                        <div
+                            className={styles.profile_tab + " tab-content"}
+                            id="myTabContent"
+                        >
+                            <TabContent activeTab={activeTab}>
+                                <TabPane tabId="1" className="tab-pane">
+                                    <Row>
+                                        <Col md="6">
+                                            <label>User Id</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>christijones1204</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Име</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>Кристина Джоунс</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>И-мейл:</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>christijones@gmail.com</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Телефон</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>123 456 7890</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Професия</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>Web Developer and Designer</p>
+                                        </Col>
+                                    </Row>
+                                </TabPane>
+                                <TabPane tabId="2" className="tab-pane">
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Опит</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>Expert</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Часова ставка</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>10$/hr</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Общ брой проекти</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>230</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Ниво на английски език</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>Expert</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md="6">
+                                            <label>Стаж</label>
+                                        </Col>
+                                        <Col md="6">
+                                            <p>6 months</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <div className="col-md-12">
+                                            <label>Биография</label>
+                                            <br />
+                                            <p>Аз съм американка, която работи в красивата България с цел партньорство.</p>
+                                        </div>
+                                    </Row>
+                                </TabPane>
+                            </TabContent>
                         </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
+                    </Col>
+                </Row>
+            </Form>
+        </Container>
     );
-}
+};
 
-export default ProfileContainer
+export default ProfileContainer;

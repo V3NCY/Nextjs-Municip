@@ -1,9 +1,7 @@
 import DefaultLayout from '../../components/layouts/default'
 import Head from 'next/head'
 import { wrapper } from "../../redux/wrapper"
-import { Alert } from 'reactstrap'
-// import { Progress } from 'reactstrap'
-
+import Bar from "../../components/admin/bars/bar"
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();
@@ -30,18 +28,12 @@ export default function Admin({ children }) {
     <DefaultLayout>
       <Head>
         <title>Админ панел</title>
+
       </Head>
-      <Alert color="success">
-        <h4 className="alert-heading">Админ панел</h4>
-        <p>
-          Добре дошли в Административния панел!
-          </p>
-        <p> Тук ще намерите най-важните инструменти за администратора...
-        </p>
-      </Alert>
-      {/* <Progress animated value={2 * 5}> Потребители </Progress>
-      <br />
-      <Progress animated color="warning" value={75} > Извършена дейност </Progress> */}
+      <h1 >Админ панел</h1>
+
+      <Bar />
     </DefaultLayout>
+
   )
 }
