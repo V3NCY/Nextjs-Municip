@@ -1,7 +1,7 @@
 import DefaultLayout from '../../components/layouts/default'
 import Head from 'next/head'
 import { wrapper } from "../../redux/wrapper"
-// import ProfileContainer from "./ProfileContainer"
+import ProfileContainer from "../../components/profile/ProfileContainer"
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();
@@ -31,7 +31,7 @@ export default function UserProfile({ children }) {
         <title>Моят профил</title>
       </Head>
       <h1>Моят профил</h1>
-      {/* <ProfileContainer /> */}
+      <ProfileContainer />
     </DefaultLayout>
   );
 }
