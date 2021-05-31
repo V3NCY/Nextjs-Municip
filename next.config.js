@@ -4,6 +4,11 @@ module.exports = {
 
   sassOptions: {
 
+    i18n: {
+
+      locales: ['en-US', 'bg-BG'],
+      defaultLocale: 'en-US',
+    },
     includePaths: [path.join(__dirname, 'styles')],
     images: {
       domains: ['res.cloudinary.com/']

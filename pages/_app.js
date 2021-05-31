@@ -2,7 +2,7 @@ import '../styles/index.scss'
 import App from "next/app"
 import { wrapper } from "../redux/wrapper"
 import { getCurrentUser } from '../redux/actions'
-import { configureLanguage } from "../pages/language/language"
+import { configureLanguage } from "./language/index";
 
 class WrappedApp extends App {
   static getInitialProps = async ({ Component, ctx }) => {
@@ -35,16 +35,18 @@ class WrappedApp extends App {
     const { Component, pageProps } = this.props;
     return <Component {...pageProps} />;
   }
-}
 
-App.getInitialProps = async ({ Component, ctx }) => {
+}
+App.getInitialProps = async ({ ctx }) => {
   const language = configureLanguage(ctx);
 
-  console.log("language", language);
+  console.log("language:", language);
 
   return {
     language
   };
-}
+};
+
+
 
 export default wrapper.withRedux(WrappedApp)

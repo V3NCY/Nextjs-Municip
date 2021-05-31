@@ -14,19 +14,19 @@ import Link from 'next/link'
 import UserMenu from "../user/menu"
 import { useSelector } from "react-redux"
 import RegisterUser from '../user/register'
-import LanguageSelector from "../language/language-selector"
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from "next/router";
+import LanguageSelector from "../../components/language/translations";
 
 const Navigation = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
     const toggle1 = () => setDropdownOpen(prevState => !prevState);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const currentUser = useSelector(state => state.currentUser);
-
+    const router = useRouter();
     const getAdminNavItem = () => {
         if (!currentUser.roles || !currentUser.roles.includes("ADMIN")) {
             return null;
@@ -57,13 +57,13 @@ const Navigation = () => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
                     <NavItem>
-                        <Link href='/' locale="en" >
-                            <a className="nav-link">Начало</a>
+                        <Link href='/'>
+                            <a className="nav-link">  Начало</a>
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link href='/culture' locale="en">
-                            <a className="nav-link">Култура</a>
+                        <Link href='/culture'>
+                            <a className="nav-link"> Култура</a>
                         </Link>
                     </NavItem>
                     <NavItem>
