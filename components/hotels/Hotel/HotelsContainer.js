@@ -1,6 +1,5 @@
 import HotelCard from "./HotelCard";
 import SearchBar from "./SearchBar";
-
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getHardcodedHotels } from "../../../redux/actions";

@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import CommentInput from "./Comments/containers/CommentInput";
 import { Button } from "reactstrap";
 
+
 class Booking extends Component {
   constructor(props) {
     super(props);

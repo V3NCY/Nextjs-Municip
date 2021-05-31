@@ -38,19 +38,20 @@
     "next-redux-wrapper": "^6.0.2",
     "next-translate": "^1.0.7",
     "nookies": "^2.5.2",
-    "perfect-scrollbar": "^1.5.1",
     "react": "17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-chartist": "^0.14.4",
-    "react-chartjs-2": "^2.11.1",
+    "react-chartjs-2": "^2.11.2",
     "react-circular-progressbar": "^2.0.4",
     "react-cookie": "^4.0.3",
     "react-copy-to-clipboard": "^5.0.3",
     "react-dates": "^21.8.0",
     "react-dom": "17.0.2",
+    "react-feather": "^2.0.9",
     "react-google-maps": "^9.4.5",
     "react-icons": "^4.2.0",
     "react-notification-alert": "0.0.13",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "reactstrap": "^8.9.0",
@@ -61,13 +62,12 @@
     "semantic-ui-react": "^2.0.3",
     "style-loader": "^2.0.0",
     "styled-components": "^5.3.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "autoprefixer": "^10.2.5",
-    "cypress": "^7.3.0",
-    "postcss": "^8.2.15",
-    "tailwindcss": "^2.1.2"
+    "postcss": "^8.2.15"
   }
 }
