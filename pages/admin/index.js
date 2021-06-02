@@ -1,7 +1,8 @@
 import DefaultLayout from '../../components/layouts/default'
 import Head from 'next/head'
 import { wrapper } from "../../redux/wrapper"
-import Bar from "../../components/admin/bars/bar"
+import TableList from '../../components/admin/views/TableList'
+import RTL from "../../components/admin/views/Rtl"
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
   const state = store.getState();
@@ -32,7 +33,8 @@ export default function Admin({ children }) {
       </Head>
       <h1 >Админ панел</h1>
 
-      <Bar />
+      <RTL />
+      <TableList />
     </DefaultLayout>
 
   )
