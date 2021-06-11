@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Card from "../Hotel/Card";
+import HotelCard from "../Hotel/HotelCard";
 import SearchBar from "../Hotel/SearchBarContainer";
+// import SearchBar from "../Hotel/SearchBar"
 
 function Hotels({ hotels }) {
   const count = hotels.length > 0 ? `${hotels.length} ` : "";
   const cards =
     hotels.length > 0 ? (
-      hotels.map((h) => <Card key={h.id} hotel={h} />)
+      hotels.map((h) => <HotelCard key={h.id} hotel={h} />)
     ) : (
       <p>Няма намерени хотели...</p>
     );

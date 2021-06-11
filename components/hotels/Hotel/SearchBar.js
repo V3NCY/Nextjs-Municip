@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
 import { setSearchValue } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
+
 function SearchBar() {
 
   const dispatch = useDispatch();

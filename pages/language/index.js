@@ -1,7 +1,7 @@
 import Router from "next/router";
 import { parseCookies, setCookie } from "nookies";
 
-export const fallbackLanguage = "en";
+export const fallbackLanguage = "bg-BG";
 
 export const languages = ["en", "bg"];
 

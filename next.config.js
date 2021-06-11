@@ -21,7 +21,7 @@ module.exports = {
       use: ['@svgr/webpack'],
     });
     return config;
-  },
+  },  
   env: {
     API_URL: "https://graphql-master-server.herokuapp.com/graphql"
   }

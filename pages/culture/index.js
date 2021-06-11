@@ -58,10 +58,9 @@ const useStyles = makeStyles((theme) => ({
 export default function Culture() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
-
     const handleExpandClick = () => {
         setExpanded(!expanded);
-    };
+    }
 
 
     return (
@@ -103,7 +102,7 @@ export default function Culture() {
                                 ></Typography>
                             </CardContent>
                             <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
+                                <IconButton aria-label="add to favorites" onClick="secondary">
                                     <FavoriteIcon />
                                 </IconButton>
                                 <IconButton aria-label="share">

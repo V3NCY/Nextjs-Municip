@@ -6,8 +6,30 @@ import CardMedia from "./CardMedia";
 import Booking from "./Booking";
 import Link from "next/link"
 import { Button } from 'reactstrap'
+import { wrapper } from "../../../redux/wrapper"
+
+export const getServerSideProps = wrapper.getServerSideProps(async ({ req, res, store }) => {
+  const state = store.getState();
+  const currentUser = state.currentUser
+  if (!currentUser.roles || !currentUser.roles.includes("USER")) {
+
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+  return {
+    props: {
+      currentUser,
+    },
+  };
+});
+
 
 function HotelCard({ hotel, expanded }) {
+  
   let actions = (
     <Button
     
@@ -19,7 +41,7 @@ function HotelCard({ hotel, expanded }) {
     
     </Button>
   );
-
+  
   if (expanded) {
     actions = <Booking hotel={hotel} />;
   }

@@ -1,4 +1,4 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Hotel from '../Hotel/Hotel';
 
 function mapStateToProps(state) {
